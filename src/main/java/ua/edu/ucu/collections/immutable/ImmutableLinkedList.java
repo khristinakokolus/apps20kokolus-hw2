@@ -55,7 +55,7 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public ImmutableList addAll(int index, Object[] c) {
-        LinkedListIndexException(index);
+        linkedListIndexException(index);
         Object[] immutableCopy = new Object[size() + c.length];
         ImmutableLinkedList newLinkedList;
         Node current = head;
@@ -83,7 +83,7 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public Object get(int index) {
-        LinkedListIndexException(index);
+        linkedListIndexException(index);
         Node current = this.head;
         int i = 0;
         while (i != index) {
@@ -95,7 +95,7 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public ImmutableList remove(int index) {
-        LinkedListIndexException(index);
+        linkedListIndexException(index);
         Object[] immutableCopy;
         ImmutableLinkedList newLinkedList;
         immutableCopy = new Object[size() - 1];
@@ -122,7 +122,7 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public ImmutableList set(int index, Object e) {
-        LinkedListIndexException(index);
+        linkedListIndexException(index);
         Object[] immutableCopy;
         immutableCopy = new Object[size()];
         ImmutableLinkedList newLinkedList;
@@ -191,7 +191,7 @@ public class ImmutableLinkedList implements ImmutableList {
         return Arrays.toString(toArray());
     }
 
-    public void LinkedListIndexException(int index) {
+    public void linkedListIndexException(int index) {
         if (size() < index || index < 0) {
             throw new ArrayIndexOutOfBoundsException();
         }
