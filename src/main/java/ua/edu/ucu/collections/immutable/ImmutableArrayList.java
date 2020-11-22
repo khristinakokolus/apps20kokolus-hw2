@@ -37,7 +37,7 @@ public class ImmutableArrayList implements ImmutableList {
 
     @Override
     public ImmutableList addAll(int index, Object[] c) {
-        IndexException(index);
+        ArrayListIndexException(index);
         Object[] immutableCopy;
         ImmutableArrayList newImmutableList;
         int difference;
@@ -64,7 +64,7 @@ public class ImmutableArrayList implements ImmutableList {
 
     @Override
     public Object get(int index) {
-        IndexException(index);
+        ArrayListIndexException(index);
         Object element;
         element = immutableList[index];
         return element;
@@ -72,7 +72,7 @@ public class ImmutableArrayList implements ImmutableList {
 
     @Override
     public ImmutableList remove(int index) {
-        IndexException(index);
+        ArrayListIndexException(index);
         Object[] immutableCopy;
         ImmutableArrayList newImmutableList;
 
@@ -88,7 +88,7 @@ public class ImmutableArrayList implements ImmutableList {
 
     @Override
     public ImmutableList set(int index, Object e) {
-        IndexException(index);
+        ArrayListIndexException(index);
         Object[] immutableCopy;
         ImmutableArrayList newImmutableList;
 
@@ -137,7 +137,7 @@ public class ImmutableArrayList implements ImmutableList {
         return Arrays.toString(toArray());
     }
 
-    public void IndexException(int index) {
+    public void ArrayListIndexException(int index) {
         if (size() < index || index < 0) {
             throw new ArrayIndexOutOfBoundsException();
         }
